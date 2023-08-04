@@ -98,6 +98,12 @@ const TodoList = () => {
     console.log(completedItems);
   };
 
+  const handleDelete = (index ) => {
+    const deleteItem = todoItems.filter((_, e) => e !== index);
+    setTodoItems([...deleteItem]);
+    console.log(deleteItem)
+  };
+
   return (
     <div className="container mx-auto my-8">
       <h1 className="text-4xl font-bold mb-4 text-red-500 text-center">
@@ -142,12 +148,20 @@ const TodoList = () => {
                     <span>{item.title}</span>
 
                     {!showCheckbox && (
+                        <div className="flex">
                       <button
                         onClick={() => handleEditTodo(index)}
-                        className="bg-blue-500 text-white py-1 px-2"
+                        className="bg-blue-500 text-white py-1 px-2 mr-1"
                       >
                         Edit
                       </button>
+                      <button
+                        onClick={() => handleDelete(index)}
+                        className="bg-red-500 text-white py-1 px-2"
+                      >
+                        Delete
+                      </button>
+                      </div>
                     )}
 
                     {showCheckbox && (
