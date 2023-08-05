@@ -85,19 +85,37 @@ const TodoList = () => {
     setTodoItems(updatedTodoItems);
   };
 
-  const handleMoveToTodoItems = (index) => {
-    const completedItem = completedItems[index];
-    completedItem.completed = false;
+//   const handleMoveToTodoItems = (index) => {
+//     const completedItem = completedItems[index];
+//     completedItem.completed = false;
 
-    setTodoItems([...todoItems, completedItem]);
+//     setTodoItems([...todoItems, completedItem]);
 
-    const updatedCompletedItems = completedItems.filter((_, i) => i !== index);
-    setCompletedItems(updatedCompletedItems);
+//     const updatedCompletedItems = completedItems.filter((_, i) => i !== index);
+//     setCompletedItems(updatedCompletedItems);
 
-    console.log(updatedCompletedItems);
+//     console.log(updatedCompletedItems);
+//     console.log(completedItems);
+//   };
+
+const handleMoveToTodoItems = (index) => {
+    // Extract the completed item from the completedItems array
+    const [movedItem] = completedItems.splice(index, 1);
+  
+    // Update the completed property of the moved item
+    movedItem.completed = false;
+  
+    // Add the moved item to the todoItems array
+    setTodoItems([...todoItems, movedItem]);
+  
+    // Update the completedItems array without the moved item
+    setCompletedItems([...completedItems]);
+  
+    // Logging for verification
+    console.log(todoItems);
     console.log(completedItems);
   };
-
+  
   const handleDelete = (index ) => {
     const deleteItem = todoItems.filter((_, e) => e !== index);
     setTodoItems([...deleteItem]);
