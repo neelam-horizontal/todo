@@ -4,7 +4,7 @@ const CompletedItems = ({ completedItems, handleMoveToTodoItems }) => {
   return (
     <>
       <h2 className="text-xl font-semibold mb-2">Completed Items</h2>
-      {completedItems.length === 0 ? (
+      {completedItems?.length === 0 ? (
         <div className="text-red-500">No data found</div>
       ) : (
         completedItems.map((item, index) => (
@@ -12,7 +12,7 @@ const CompletedItems = ({ completedItems, handleMoveToTodoItems }) => {
             key={index}
             className="todo-item flex items-center justify-between mb-2"
           >
-            <span>{item.title}</span>
+            <span>{item?.title}</span>
             <button
               onClick={() => handleMoveToTodoItems(index)}
               className="bg-blue-500 text-white py-1 px-2"

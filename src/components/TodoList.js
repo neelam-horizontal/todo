@@ -159,7 +159,7 @@ const TodoList = () => {
             handleMoveToCompleted={handleMoveToCompleted}
           />
 
-          {todoItems.length !== 0 && (
+          {todoItems?.length !== 0 && (
             <button
               className={`${
                 showCheckbox ? "bg-red-500" : "bg-blue-500"
