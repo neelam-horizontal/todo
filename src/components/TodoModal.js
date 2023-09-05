@@ -14,7 +14,9 @@ const TodoModal = ({ initialValue, onCancel, onSave }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white p-4 rounded-md shadow-lg">
-        <h3 className="text-xl font-semibold mb-2">Edit ToDo item</h3>
+        <h3 className="text-xl font-semibold mb-2">
+          Edit ToDo item
+        </h3>
         <input
           type="text"
           value={value}

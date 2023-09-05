@@ -53,7 +53,7 @@ const TodoList = () => {
   };
 
   const handleCheckboxChange = (index) => {
-    console.log(todoItems);
+    console.log("todoItems ", todoItems);
     const updatedTodoItems = [...todoItems];
     updatedTodoItems[index].completed = !updatedTodoItems[index].completed;
     console.log(updatedTodoItems[index].completed);
